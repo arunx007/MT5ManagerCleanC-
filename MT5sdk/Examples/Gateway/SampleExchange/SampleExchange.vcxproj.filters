@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{f26e6dcc-ea7f-4654-8350-7f1f82104231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExchangeAPI">
+      <UniqueIdentifier>{a131ba9a-e234-4dd0-964d-458e5a1f0ee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExchangeAPI\Contexts">
+      <UniqueIdentifier>{fd33406e-26e4-43de-af3b-d9a39a0f9f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExchangeAPI\Common">
+      <UniqueIdentifier>{58a5d3a3-2104-477d-b5cb-3ddc49ba25ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ExchangeAPI\Bases">
+      <UniqueIdentifier>{f79e4c5b-d4a6-436b-882c-d142cfeac0c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{e17994f3-2c91-43c8-83e7-b3b173c14c7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExchangeAPI">
+      <UniqueIdentifier>{82001575-2b53-4405-b1c0-a7037c03a654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExchangeAPI\Contexts">
+      <UniqueIdentifier>{f921719b-cb0f-490a-a176-a72ea03e8846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExchangeAPI\Common">
+      <UniqueIdentifier>{819c1a22-c000-4f2d-bf79-8ee14fa14d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ExchangeAPI\Bases">
+      <UniqueIdentifier>{0cebe071-c69e-44d0-896b-a5949eb3d187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MTExchangeApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleExchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Logger.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Contexts\ExchangeContext.cpp">
+      <Filter>Source Files\ExchangeAPI\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Contexts\ExchangeSocket.cpp">
+      <Filter>Source Files\ExchangeAPI\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Common\ExchangeMsg.cpp">
+      <Filter>Source Files\ExchangeAPI\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Common\ExchangeProtocol.cpp">
+      <Filter>Source Files\ExchangeAPI\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Bases\TradeDispatcher.cpp">
+      <Filter>Source Files\ExchangeAPI\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Bases\TradeInstrument.cpp">
+      <Filter>Source Files\ExchangeAPI\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Bases\TradeInstrumentEE.cpp">
+      <Filter>Source Files\ExchangeAPI\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Bases\TradeInstrumentMM.cpp">
+      <Filter>Source Files\ExchangeAPI\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="ExchangeAPI\Bases\TradeAccounts.cpp">
+      <Filter>Source Files\ExchangeAPI\Bases</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MTExchangeApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Const.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Logger.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Contexts\ExchangeContext.h">
+      <Filter>Header Files\ExchangeAPI\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Contexts\ExchangeSocket.h">
+      <Filter>Header Files\ExchangeAPI\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeContextBase.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsg.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgBook.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgDeal.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgHeartBeat.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgLogin.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgLogout.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgOrder.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgSymbol.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgTick.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeProtocol.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeProtocolData.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Bases\TradeDispatcher.h">
+      <Filter>Header Files\ExchangeAPI\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Bases\TradeInstrument.h">
+      <Filter>Header Files\ExchangeAPI\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Bases\TradeInstrumentEE.h">
+      <Filter>Header Files\ExchangeAPI\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Bases\TradeInstrumentMM.h">
+      <Filter>Header Files\ExchangeAPI\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Common\ExchangeMsgAccountData.h">
+      <Filter>Header Files\ExchangeAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ExchangeAPI\Bases\TradeAccounts.h">
+      <Filter>Header Files\ExchangeAPI\Bases</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\gateway.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SampleExchange.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

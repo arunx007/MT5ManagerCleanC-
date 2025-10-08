@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Reports">
+      <UniqueIdentifier>{f80b4461-c5cd-4466-ad57-d7e6fcf8fcda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{836ae076-0413-4d99-bae5-bf8f57511b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{ce84cec6-e3f4-4cdd-8fb7-46730f81390f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Reports">
+      <UniqueIdentifier>{e270471d-6d82-4e85-a1ce-a148bd60e7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Plugin">
+      <UniqueIdentifier>{6136210c-9fd5-4873-9932-436b20ec08b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugin">
+      <UniqueIdentifier>{8ef38544-170b-400f-8200-3866b4d4561d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Plugin\Bases">
+      <UniqueIdentifier>{4148fd5f-8cde-419e-9c77-2a70f4222b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Plugin\Records">
+      <UniqueIdentifier>{26b07c09-0513-425b-8ec1-c6b0334647f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugin\Bases">
+      <UniqueIdentifier>{f59ac228-89f7-4b97-859e-d8d37be22422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugin\Records">
+      <UniqueIdentifier>{bd74f14e-3107-48c3-8b12-628cae657567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools\Zip">
+      <UniqueIdentifier>{9ce9f89a-c079-4da0-8175-99436728b400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools\Zip">
+      <UniqueIdentifier>{111d874f-2552-4285-a550-81ad05f60173}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Helpers.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\RecordDataBase.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TextBase.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TextBaseWriter.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportColumn.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\OrderbookReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\CustomerReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ReportContext.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\AdjustmentsReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ConcordanceReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ManagerReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MarketEventsReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\TickReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\TradeReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\PluginContext.h">
+      <Filter>Header Files\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\PluginInstance.h">
+      <Filter>Header Files\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TextReader.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\PluginReports.h">
+      <Filter>Header Files\Plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\RequestBase.h">
+      <Filter>Header Files\Plugin\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\SLTPBase.h">
+      <Filter>Header Files\Plugin\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\NFATradeRecord.h">
+      <Filter>Header Files\Plugin\Records</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin\NFAOrderRecord.h">
+      <Filter>Header Files\Plugin\Records</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Zip\UnzipFile.h">
+      <Filter>Header Files\Tools\Zip</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Zip\ZipFile.h">
+      <Filter>Header Files\Tools\Zip</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Zip\ZLib.h">
+      <Filter>Header Files\Tools\Zip</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\TextBaseWriter.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\TextBase.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="NFA.Reports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ReportColumn.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\OrderbookReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\CustomerReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\TradeReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\TickReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MarketEventsReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\ManagerReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\ConcordanceReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\AdjustmentsReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\PluginInstance.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\TextReader.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\PluginReports.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\RequestBase.cpp">
+      <Filter>Source Files\Plugin\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\SLTPBase.cpp">
+      <Filter>Source Files\Plugin\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\NFATradeRecord.cpp">
+      <Filter>Source Files\Plugin\Records</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin\NFAOrderRecord.cpp">
+      <Filter>Source Files\Plugin\Records</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Zip\UnzipFile.cpp">
+      <Filter>Source Files\Tools\Zip</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Zip\ZipFile.cpp">
+      <Filter>Source Files\Tools\Zip</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Zip\ZLib.cpp">
+      <Filter>Source Files\Tools\Zip</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="NFA.Reports.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

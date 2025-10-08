@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Reports">
+      <UniqueIdentifier>{34dc7e6d-d51c-4814-a7b6-be4ff0643364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Reports">
+      <UniqueIdentifier>{ed34a90a-a913-4e70-8e9d-9c0bfd9e40d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{cdcf8977-22cd-42b5-b4a8-dd0a81e954df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Templates">
+      <UniqueIdentifier>{23a2b9ff-711f-458e-98c1-d7cfe14f14a7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gateways.Standard.Reports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\Profit.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\Turnover.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\WhiteLabel.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\Profit.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\Turnover.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\WhiteLabel.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\GatewayUtils.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportError.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Gateways.Standard.Reports.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Profit.html">
+      <Filter>Resource Files\Templates</Filter>
+    </None>
+    <None Include="res\Turnover.html">
+      <Filter>Resource Files\Templates</Filter>
+    </None>
+    <None Include="res\WhiteLabel.html">
+      <Filter>Resource Files\Templates</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title><mt5:report_name/></title>
+  <style type="text/css">
+  body { margin:3px; }
+  h3   { font-family: Tahoma,Arial; }
+  table,p { font: 8pt Tahoma,Arial; }
+  .title { font-size: 14pt; text-align: center; }
+  .date  { font-size: 14pt; text-align: center; }
+  .table_title { text-align: left; font-weight:bold; }
+  .table_header { text-align: right; background-color:#C0C0C0;}
+  .cell_first { text-align: left; }
+  .cell_text  {text-align: left; }
+  .cell_num   {text-align: right; }
+  tr.line0   { background: #FFFFFF; text-align: right;}
+  tr.line1   { background: #E0E0E0; text-align: right;}
+  tr.subtotal{ background: #C0C0C0; text-align: right; font-weight: bold;}
+  tr.summary { background: #FFFFFF; text-align: right; font-weight: bold;}
+  @media screen { .mt5_hide { } }
+  </style>
+</head>
+<body>
+<h3 class="title mt5_hide"><mt5:report_name/></h3>
+<table cellspacing="1" cellpadding="3" border="0" width="100%">
+<tr class="mt5_hide"><td colspan="14" class="date">Date: <mt5:date/></td></tr>
+<tr class="table_header">
+    <td class="cell_first">Deal</td>
+    <td>Account</td>
+    <td class="cell_text">Name</td>
+    <td class="cell_text">Time</td>
+    <td>Position</td>
+    <td class="cell_text">Symbol</td>
+    <td>Volume</td>
+    <td class="cell_text">Action</td>
+    <td class="cell_text">Entry</td>
+    <td>Price</td>
+    <td>Comission</td>
+    <td class="cell_text">Type</td>
+    <td>Agent Comission</td>
+    <td class="cell_text">Currency</td>
+</tr>
+<mt5:commissions>
+   <mt5:no_commissions>
+      <tr align=right><td colspan=13 nowrap align=center>No agents commissions</td></tr>
+   </mt5:no_commissions>
+   <mt5:commission_instant>
+      <tr class="line<mt5:line/>">
+         <td class="cell_first"><mt5:deal/></td>
+         <td><mt5:account/></td>
+         <td class="cell_text"><mt5:name/></td>
+         <td class="cell_text"><mt5:time/></td>
+         <td><mt5:position/></td>
+         <td class="cell_text"><mt5:symbol/></td>
+         <td><mt5:volume/></td>
+         <td class="cell_text"><mt5:action/></td>
+         <td class="cell_text"><mt5:entry/></td>
+         <td><mt5:price/></td>
+         <td><mt5:commission/></td>
+         <td class="cell_text"><mt5:type/></td>
+         <td><mt5:agent_commission/></td>
+         <td class="cell_text"><mt5:currency/></td>
+      </tr>
+   </mt5:commission_instant>
+   <mt5:commission_daily>
+      <tr class="line<mt5:line/>">
+         <td class="cell_first"></td>
+         <td><mt5:account/></td>
+         <td class="cell_text"><mt5:name/></td>
+         <td class="cell_text"><mt5:time/></td>
+         <td colspan="7"></td>
+         <td class="cell_text"><mt5:type/></td>
+         <td><mt5:agent_commission/></td>
+         <td class="cell_text"><mt5:currency/></td>
+      </tr>
+   </mt5:commission_daily>
+   <mt5:commission_subtotal>
+      <tr class="subtotal">
+         <td>Agent:</td>
+         <td><mt5:account/></td>
+          <td class="cell_text"><mt5:name/></td>
+         <td colspan="9"></td>
+         <td><mt5:agent_commission/></td>
+         <td class="cell_text"><mt5:currency/></td>
+      </tr>
+   </mt5:commission_subtotal>
+</mt5:commissions>
+<mt5:summary>
+   <tr class="summary">
+      <td><mt5:caption/></td>
+      <td colspan="11"></td>
+      <td><mt5:agent_commission/></td>
+      <td class="cell_text"><mt5:currency/></td>
+   </tr>
+</mt5:summary>
+</table>
+<br>
+</body>
+</html>

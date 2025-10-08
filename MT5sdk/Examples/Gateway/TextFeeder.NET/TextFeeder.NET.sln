@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFeeder.NET", "TextFeeder.NET.csproj", "{2F415D2A-3E50-4A72-81FB-C71BE1A94B29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F415D2A-3E50-4A72-81FB-C71BE1A94B29}.Debug|x64.ActiveCfg = Debug|x64
+		{2F415D2A-3E50-4A72-81FB-C71BE1A94B29}.Debug|x64.Build.0 = Debug|x64
+		{2F415D2A-3E50-4A72-81FB-C71BE1A94B29}.Release|x64.ActiveCfg = Release|x64
+		{2F415D2A-3E50-4A72-81FB-C71BE1A94B29}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93A3E7DA-3CC7-442F-ADC8-C0B3E92575C5}
+	EndGlobalSection
+EndGlobal

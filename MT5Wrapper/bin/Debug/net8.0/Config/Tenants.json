@@ -1,0 +1,126 @@
+{
+  "Tenants": {
+    "mgr_a1b2c3d4": {
+      "TenantId": "mgr_a1b2c3d4",
+      "ManagerName": "Global Trading Solutions",
+      "CompanyName": "Global Trading Solutions Ltd",
+      "Email": "admin@globaltrading.com",
+      "Subscription": {
+        "PlanId": "professional",
+        "PlanName": "Professional",
+        "Status": "Active",
+        "MonthlyPrice": 299,
+        "MonthlyCallLimit": 1000000,
+        "CurrentMonthCalls": 150000,
+        "MaxConnections": 20,
+        "RateLimit": 5000,
+        "MaxMT5Managers": 3,
+        "MaxClientApps": 10,
+        "MaxWebSocketConnections": 50,
+        "Features": [
+          "Advanced Authentication",
+          "Multi-Manager Support",
+          "Real-time Tick Streaming",
+          "Chart Data API",
+          "Priority Email Support"
+        ],
+        "StartDate": "2024-01-15T10:30:00Z",
+        "AutoRenewal": true
+      },
+      "Status": "Active",
+      "ApiEndpoints": {
+        "BaseUrl": "https://mgr_a1b2c3d4.yourapi.com",
+        "AuthEndpoint": "/api/mgr_a1b2c3d4/auth",
+        "DataEndpoint": "/api/mgr_a1b2c3d4/data",
+        "WebSocketEndpoint": "wss://mgr_a1b2c3d4.yourapi.com/ws"
+      },
+      "Configuration": {
+        "DatabaseConnectionString": "Server=your-db-server;Database=MT5_mgr_a1b2c3d4;",
+        "RedisConnectionString": "your-redis-server:6380,password=tenant-password,ssl=True",
+        "MaxConcurrentConnections": 20,
+        "RateLimitPerMinute": 5000,
+        "Features": [
+          "Advanced Authentication",
+          "Multi-Manager Support",
+          "Real-time Tick Streaming"
+        ]
+      },
+      "MT5Managers": [
+        {
+          "ManagerId": "manager_1",
+          "Server": "185.82.73.132:443",
+          "Login": "1109",
+          "Password": "encrypted_password_here",
+          "IsActive": true,
+          "Priority": 1
+        },
+        {
+          "ManagerId": "manager_2",
+          "Server": "backup.mt5server.com:443",
+          "Login": "backup_login",
+          "Password": "encrypted_password_here",
+          "IsActive": true,
+          "Priority": 2
+        }
+      ],
+      "CreatedAt": "2024-01-15T10:30:00Z"
+    },
+
+    "mgr_e5f6g7h8": {
+      "TenantId": "mgr_e5f6g7h8",
+      "ManagerName": "Elite Forex Brokers",
+      "CompanyName": "Elite Forex Brokers Inc",
+      "Email": "support@eliteforex.com",
+      "Subscription": {
+        "PlanId": "enterprise",
+        "PlanName": "Enterprise",
+        "Status": "Active",
+        "MonthlyPrice": 999,
+        "MonthlyCallLimit": 10000000,
+        "CurrentMonthCalls": 2500000,
+        "MaxConnections": 100,
+        "RateLimit": 20000,
+        "MaxMT5Managers": 10,
+        "MaxClientApps": -1,
+        "MaxWebSocketConnections": 200,
+        "Features": [
+          "Full API Access",
+          "Unlimited Managers",
+          "White-label Solution",
+          "24/7 Phone Support"
+        ],
+        "StartDate": "2024-01-01T00:00:00Z",
+        "AutoRenewal": true
+      },
+      "Status": "Active",
+      "ApiEndpoints": {
+        "BaseUrl": "https://mgr_e5f6g7h8.yourapi.com",
+        "AuthEndpoint": "/api/mgr_e5f6g7h8/auth",
+        "DataEndpoint": "/api/mgr_e5f6g7h8/data",
+        "WebSocketEndpoint": "wss://mgr_e5f6g7h8.yourapi.com/ws"
+      },
+      "Configuration": {
+        "DatabaseConnectionString": "Server=your-db-server;Database=MT5_mgr_e5f6g7h8;",
+        "RedisConnectionString": "your-redis-server:6381,password=enterprise-password,ssl=True",
+        "MaxConcurrentConnections": 100,
+        "RateLimitPerMinute": 20000,
+        "Features": [
+          "Full API Access",
+          "Unlimited Managers",
+          "White-label Solution"
+        ]
+      },
+      "MT5Managers": [
+        {
+          "ManagerId": "primary_manager",
+          "Server": "primary.mt5server.com:443",
+          "Login": "primary_login",
+          "Password": "encrypted_password_here",
+          "IsActive": true,
+          "Priority": 1
+        }
+      ],
+      "CreatedAt": "2024-01-01T00:00:00Z"
+    }
+  }
+}

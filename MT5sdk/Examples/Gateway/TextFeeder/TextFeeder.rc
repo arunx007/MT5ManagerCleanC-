@@ -1,0 +1,92 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include "windows.h"
+
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+//
+// Icon
+//
+
+IDI_MAIN                ICON                    "res\\datafeed.ico"
+#endif    // Neutral resources
+
+
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 5,0,0,0
+ PRODUCTVERSION 5,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "https://www.metaquotes.net"
+            VALUE "CompanyName", "MetaQuotes Ltd."
+            VALUE "FileDescription", "MetaTrader 5 Text Feeder"
+            VALUE "FileVersion", "5, 00, 00, 00"
+            VALUE "InternalName", "Text Feeder"
+            VALUE "LegalCopyright", "© 2000-2025, MetaQuotes Ltd."
+            VALUE "LegalTrademarks", "MetaTrader"
+            VALUE "OriginalFilename", "TextFeeder.exe "
+            VALUE "ProductName", "Text Feeder"
+            VALUE "ProductVersion", "5, 00, 00, 00"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+#endif    
+
+
+

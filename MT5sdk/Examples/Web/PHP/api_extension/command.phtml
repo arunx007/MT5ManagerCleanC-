@@ -1,0 +1,131 @@
+<!--
++------------------------------------------------------------------+
+|                           MetaTrader 5 Web API Extension Example |
+|                   Copyright 2001-2015, MetaQuotes Software Corp. |
+|                                        http://www.metaquotes.net |
++------------------------------------------------------------------+
+-->
+<html>
+<head>
+  <title>MetaTrader 5 Web API Extension Example</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <script>
+  //--- On load page function
+  window.onload = function()
+  {
+  //--- Set default params
+    var ref = document.getElementsByName('info[group]');
+    if(ref[0].value.replace(/\s+/g, '').length==0)
+    {
+      //--- default Group
+      ref[0].value = '*';
+    }
+    ref = document.getElementsByName('info[src_cur]');
+    if(ref[0].value.replace(/\s+/g, '').length==0)
+    {
+      //--- default Sources Currency
+      ref[0].value = 'EUR';
+    }
+    ref = document.getElementsByName('info[dst_cur]');
+    if(ref[0].value.replace(/\s+/g, '').length==0)
+    {
+      //--- default Destionation Currency
+      ref[0].value = 'USD';
+    }
+  };
+  //--- Disable input 
+  function Disable(name)
+  {
+    var ref = document.getElementsByName(name);
+    ref[0].disabled=1;
+  };
+  //--- Enable input
+  function Enable(name)
+  {
+    var ref = document.getElementsByName(name);
+    ref[0].disabled=0;
+  };
+  //--- Change dis(en)able option in inputs by selected option
+  function ChangeState(opt_name)
+  {
+    switch(opt_name)
+    {
+    //--- total users option
+      case 'APIEXT_TOTAL_USERS':
+        Enable('info[group]');
+        Disable('info[src_cur]');
+        Disable('info[dst_cur]');
+        break;
+    //--- total orders option
+      case 'APIEXT_TOTAL_ORDERS':
+        Enable('info[group]');
+        Disable('info[src_cur]');
+        Disable('info[dst_cur]');
+        break;
+    //--- total positions option
+      case 'APIEXT_TOTAL_POSITIONS':
+        Enable('info[group]');
+        Disable('info[src_cur]');
+        Disable('info[dst_cur]');
+        break;
+    //--- buy rate option
+      case 'APIEXT_RATE_BUY':
+        Disable('info[group]');
+        Enable('info[src_cur]');
+        Enable('info[dst_cur]');
+        break;
+    //--- sell rate option
+      case 'APIEXT_RATE_SELL':
+        Disable('info[group]');
+        Enable('info[src_cur]');
+        Enable('info[dst_cur]');
+        break;
+    }
+  };
+  </script>
+</head>
+<div align="center">
+<?
+if(!empty($error))
+  {
+?>
+    <div class="error"><?=@$error?></div>
+<?
+  }
+?>
+<form method="POST">
+<table>
+<tr>
+<td align="right">Command:</td>
+<td><select name="info[command]" value="<?=$this->info['command']?>" style="width: 100%;" OnChange="ChangeState(this.options[this.selectedIndex].value)">
+<option value="APIEXT_TOTAL_USERS">Get total users</option>
+<option value="APIEXT_TOTAL_ORDERS">Get total orders</option>
+<option value="APIEXT_TOTAL_POSITIONS">Get total positions</option>
+<option value="APIEXT_RATE_BUY">Get buy rate</option>
+<option value="APIEXT_RATE_SELL">Get sell rate</option>
+</select>
+</tr>
+<tr>
+  <td align="right">Group:</td>
+  <td><input type="text" name="info[group]" value="<?=@$this->info['group']?>" size="30"/></td>
+</tr>
+<tr>
+  <td align="right">Source Currency:</td>
+  <td><input type="text" name="info[src_cur]" value="<?=@$this->info['src_cur']?>" size="30" disabled=1 /></td>
+</tr>
+<tr>
+  <td align="right">Destination Currency:</td>
+  <td><input type="text" name="info[dst_cur]" value="<?=@$this->info['dst_cur']?>" size="30" disabled=1 /></td>
+</tr>
+<tr>
+  <td align="right">Result:</td>
+  <td><input type="text" name="info[result]" value="<?=@$this->info['result']?>" size="30" disabled=1 /></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td><input type="submit" name="a[SendCommand]" value="Request" size="30"  style="width: 100%;" /></td>
+</tr>
+</table>
+</form>
+</div>
+</html>

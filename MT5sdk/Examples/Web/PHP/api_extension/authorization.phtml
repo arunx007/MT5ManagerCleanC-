@@ -1,0 +1,47 @@
+<!--
++------------------------------------------------------------------+
+|                           MetaTrader 5 Web API Extension Example |
+|                   Copyright 2001-2015, MetaQuotes Software Corp. |
+|                                        http://www.metaquotes.net |
++------------------------------------------------------------------+
+-->
+<html>
+<head>
+  <title>MetaTrader 5 Web API Extension Example</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<div align="center">
+<?
+if(!empty($error))
+  {
+?>
+    <div class="error"><?=@$error?></div>
+<?
+  }
+?>
+<form method="POST">
+<table>
+<tr>
+  <td align="right">Server:</td>
+  <td><input type="text" name="info[server]" value="<?=$this->info['server']?>" size="30"/></td>
+</tr>
+<tr>
+  <td align="right">Port:</td>
+  <td><input type="text" name="info[port]" value="<?=$this->info['port']?>" size="30"/></td>
+</tr>
+<tr>
+  <td align="right">Login:</td>
+  <td><input type="text" name="info[login]" value="<?=$this->info['login']?>" size="30" autocomplete="off"/></td>
+</tr>
+<tr>
+  <td align="right">Password:</td>
+  <td><input type="password" name="info[password]" value="<?=$this->info['password']?>" size="30"/></td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td><input type="submit" name="a[Connect]" value="Connect" size="30" style="width: 100%;" /></td>
+</tr>
+</table>
+</form>
+</div>
+</html>

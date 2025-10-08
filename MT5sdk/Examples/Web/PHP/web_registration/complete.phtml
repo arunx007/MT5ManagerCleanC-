@@ -1,0 +1,21 @@
+<html>
+<head>
+   <title>Activation process completed</title>
+   <link href="wr_styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+   <div align="center">
+      <table width="80%" border=0 cellpadding="0" cellspacing="10" class="formtable">
+         <tr align="center"><td><p><br><br><strong>Congratulations! Activation process completed.</strong><br><br></p></td></tr>
+         <tr><td align="center">
+            <table cellspacing="5">
+               <tr><td align="right">MetaTrader Server IP</td><td><?=MT5_SERVER_IP?>:<?=MT5_SERVER_PORT?></td></tr>
+               <tr><td align="right">Your Login:</td>          <td><?=$new_user->Login?></td></tr>
+               <tr><td align="right">Your Password:</td>          <td><?=$new_user->MainPassword?></td></tr>
+            </table>
+         </td></tr>
+      </table>
+   </div>
+</body>
+</html>

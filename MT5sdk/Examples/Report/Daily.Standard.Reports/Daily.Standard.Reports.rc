@@ -1,0 +1,87 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+#include "winres.h"
+
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+//
+// HTML
+//
+
+IDR_HTML_DAILY_TRADE_REPORT   HTML                    "res\\DailyTradeReport.htm"
+IDR_HTML_DAILY_SERVER_REPORT  HTML                    "res\\DailyServerReport.htm"
+IDR_HTML_DAILY_DEALING_REPORT HTML                    "res\\DailyDealingReport.htm"
+IDR_HTML_DAILY_EXPERT_REPORT  HTML                    "res\\DailyExpertReport.htm"
+
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 5,0,0,0
+ PRODUCTVERSION 5,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", "https://www.metaquotes.net"
+            VALUE "CompanyName", "MetaQuotes Ltd."
+            VALUE "FileDescription", "MetaTrader 5 Daily Standard Reports"
+            VALUE "FileVersion", "5, 0, 0, 0"
+            VALUE "InternalName", "MetaTrader 5 Report API plug-in"
+            VALUE "LegalCopyright", "© 2000-2025, MetaQuotes Ltd."
+            VALUE "LegalTrademarks", "MetaTrader"
+            VALUE "OriginalFilename", "Daily.Standart.Report.dll"
+            VALUE "ProductName", "MetaTrader 5 Daily Standard Reports"
+            VALUE "ProductVersion", "5, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+#endif    
+
+
+

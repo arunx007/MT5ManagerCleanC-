@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextFeeder", "TextFeeder.vcxproj", "{8A697370-9955-4254-8B7E-341A9DA59748}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AVX|ARM64 = AVX|ARM64
+		AVX|x64 = AVX|x64
+		AVX2|ARM64 = AVX2|ARM64
+		AVX2|x64 = AVX2|x64
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX|ARM64.ActiveCfg = AVX|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX|ARM64.Build.0 = AVX|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX|x64.ActiveCfg = AVX|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX|x64.Build.0 = AVX|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX2|ARM64.ActiveCfg = AVX2|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX2|ARM64.Build.0 = AVX2|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX2|x64.ActiveCfg = AVX2|x64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.AVX2|x64.Build.0 = AVX2|x64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Debug|ARM64.Build.0 = Debug|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Debug|x64.ActiveCfg = Debug|x64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Debug|x64.Build.0 = Debug|x64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Release|ARM64.ActiveCfg = Release|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Release|ARM64.Build.0 = Release|ARM64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Release|x64.ActiveCfg = Release|x64
+		{8A697370-9955-4254-8B7E-341A9DA59748}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC103CCA-25A1-463F-A4EB-8B3A7D4082E1}
+	EndGlobalSection
+EndGlobal

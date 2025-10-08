@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>
+      <mt5:report_name/>: <mt5:server/>, <mt5:from/> - <mt5:to />
+   </title>
+     <style type="text/css">  
+   <!--
+      body           { margin: 3px; }
+      
+      h3             { font-family: Tahoma,Arial;}
+      p.group_type   { font-size: 14pt;font-family: Tahoma,Arial;}
+      p.block_info   { font: 10pt Tahoma,Arial;}
+      
+      table          { border-collapse: collapse;}
+      th             { font: 0pt Tahoma,Arial;}
+      td,p           { font: 8pt Tahoma,Arial;}
+      td.title       { font: 10pt Tahoma,Arial;border-bottom: solid 2px black;font-weight: bold;}
+      td.header      { border-bottom: solid 2px black;}
+      td.sep         { border-top: solid 1px black;}
+      tr.line0       { background: #FFFFFF;}
+      tr.line1       { background: #F4F4F4;}
+      tr.deals_line0 { background: #FFFFFF;}
+      tr.deals_line1 { background: #F4F4F4;}
+
+      .msdate        { white-space: nowrap; mso-number-format: "General Date";}
+      .mspt          { white-space: nowrap; mso-number-format: \#\,\#\#0\.00;text-align: right;}
+      .msptbold      { white-space: nowrap; mso-number-format: \#\,\#\#0\.00;text-align: right;font-weight: bold;}
+      .msdig         { white-space: nowrap; text-align: right;}
+      .mstext        { text-align: left;}
+      .bold          { font-weight: bold;}
+      .short_vertical_space   {height: 40px;}
+      .long_vertical_space    {height: 100px;}
+      //-->
+   </style>
+</head>
+<body>
+   <mt5:group_types>
+      <mt5:group_type>
+      <h3><mt5:type/>: Accounts report</h3>
+   
+      <p>Company's client data in tabular form. The first column specifies a group, the second one contains the total number of accounts followed by the percentage of active clients (trading activity within the last three months detected), fixed profit, floating profit or loss, equity and the group's currency. The summary data grouped by currency is displayed at the bottom.</p>
+         
+      <table cellspacing="0" cellpadding="4" border="0" width="100%">
+         <tr height="4">
+            <td width="25%"></td>
+            <td width="8%"></td>
+            <td width="8%"></td>
+            <td width="17%"></td>
+            <td width="17%"></td>
+            <td width="17%"></td>
+            <td width="8%"></td>
+         </tr>
+         <tr>
+            <td class="title" align="left">Group</td>
+            <td class="header" align="right">Accounts</td>
+            <td class="header" align="right" title="Active accounts for the last 3 months">Active,&nbsp;%</td>
+            <td class="header" align="right">Balance</td>
+            <td class="header" align="right">Floating&nbsp;P/L</td>
+            <td class="header" align="right">Equity</td>
+            <td class="header" align="left">Currency</td>
+         </tr>
+         <mt5:groups>
+            <tr class="line<mt5:line/>">
+               <td class="mstext"><mt5:group/></td>
+               <td class="msdig"><mt5:accounts/></td>
+               <td class="msdig"><mt5:active/></td>
+               <td class="mspt"><mt5:balance/></td>
+               <td class="mspt"><mt5:profit/></td>
+               <td class="mspt"><mt5:equity/></td>
+               <td class="mstext"><mt5:currency/></td>
+            </tr>
+         </mt5:groups>
+         <mt5:groups_totals>
+            <tr>
+               <td align="right"></td>
+               <td class="<mt5:sep/> msdig bold" align="right"><mt5:accounts/></td>
+               <td class="<mt5:sep/> msdig bold" align="right"><mt5:active/></td>
+               <td class="<mt5:sep/> msptbold"><mt5:balance/></td>
+               <td class="<mt5:sep/> msptbold"><mt5:profit/></td>
+               <td class="<mt5:sep/> msptbold"><mt5:equity/></td>
+               <td class="<mt5:sep/> bold" align="left"><mt5:currency/></td>
+            </tr>
+         </mt5:groups_totals>
+      </table>
+
+      <h3><mt5:type/>: Deals Count Report</h3>
+         
+      <p>Amount of performed deals. Deal types are highlighted in different colors.</p>
+
+      <div style="height:400px;">
+         <mt5:chart_deals_count/>
+      </div>
+         
+      <h3><mt5:type/>: Deals Volume Report</h3>
+
+      <p>Volumes of performed deals in one of the currencies (USD is used by default, customizable). Deal types are highlighted in different colors.</p>
+
+      <div style="height:400px;">
+         <mt5:chart_deals_volume/>
+      </div>
+         
+      <h3><mt5:type/>: Deals Report (monthly)</h3>
+
+      <p>Tabular report for each deal type. Each line contains the appropriate monthly data. Each cell contains two values, count of deals and performed volume in one of the currencies (USD is used by default, customizable).
+         Summary data for the entire time interval is displayed at the bottom.</p>
+         
+      <table cellspacing="0" cellpadding="4" border="0" width="100%">
+         <tr height="4">
+            <td width="6.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+            <td width="8.5%"></td>
+         </tr>
+            <tr>  
+               <td class="title" align="left">Date</td>
+               <td class="header" align="right">Client</td>
+               <td class="header" align="right">Mobile</td>
+               <td class="header" align="right">Web</td>
+               <td class="header" align="right">Expert</td>
+               <td class="header" align="right">Dealer</td>
+               <td class="header" align="right">Stop</td>
+               <td class="header" align="right">Rollover</td>
+               <td class="header" align="right">External</td>
+               <td class="header" align="right">Variation&nbsp;margin</td>
+               <td class="header" align="right">Gateway</td>
+               <td class="header" align="right">Signal</td>
+               <td class="header" align="right">Settlement</td>
+               <td class="header" align="right">Transfer</td>
+            </tr>
+            <mt5:deals_by_months>
+            <tr class="line<mt5:deals_line/>">
+               <td class="mstext"><mt5:deals_date/></td>
+               <td class="msdig"><mt5:deals_by_client/></td>
+               <td class="msdig"><mt5:deals_by_mobile/></td>
+               <td class="msdig"><mt5:deals_by_web/></td>
+               <td class="msdig"><mt5:deals_by_expert/></td>
+               <td class="msdig"><mt5:deals_by_dealer/></td>
+               <td class="msdig"><mt5:deals_by_stop/></td>
+               <td class="msdig"><mt5:deals_by_rollover/></td>
+               <td class="msdig"><mt5:deals_by_external/></td>
+               <td class="msdig"><mt5:deals_by_vmargin/></td>
+               <td class="msdig"><mt5:deals_by_gateway/></td>
+               <td class="msdig"><mt5:deals_by_signal/></td>
+               <td class="msdig"><mt5:deals_by_settlement/></td>
+               <td class="msdig"><mt5:deals_by_transfer/></td>
+            </tr>
+            </mt5:deals_by_months>
+         <tr>
+            <td align="right"></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_client/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_mobile/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_web/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_expert/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_dealer/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_stop/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_rollover/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_external/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_vmargin/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_gateway/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_signal/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_settlement/></td>
+            <td class="<mt5:dsep/> msdig bold"><mt5:deals_total_transfer/></td>
+         </tr>
+      </table>
+    </mt5:group_type>
+   </mt5:group_types>
+</body>
+</html>

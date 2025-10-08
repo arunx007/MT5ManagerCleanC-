@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{1954daa7-1a84-4591-8c13-a1d3d9d722eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataSource">
+      <UniqueIdentifier>{56f60e5c-76da-48c0-801e-3a3459282afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{d2d14555-0be3-4d89-bf4f-0086dc213cff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{0336d34b-ce59-4e5b-86ca-9774596197f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Common">
+      <UniqueIdentifier>{34a871fc-6985-439f-87e2-23f241ea4be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Config">
+      <UniqueIdentifier>{49757444-3efc-4d83-b3b1-8a10dd53e5b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API\Bases">
+      <UniqueIdentifier>{303efe0a-28c8-408d-beea-c409198daf52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataSource">
+      <UniqueIdentifier>{1ea3a03c-5e58-4b85-a954-8148bb434b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{988a59dc-4d2b-466a-aab4-d44a0ea38aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MTDatafeedApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFeeder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Logger.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSource\DataSource.cpp">
+      <Filter>Source Files\DataSource</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MTDatafeedApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Const.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Logger.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\API\MT5APIGateway.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\MT5APIConstants.h">
+      <Filter>Header Files\API\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\MT5APILogger.h">
+      <Filter>Header Files\API\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Config\MT5APIConfigFeeder.h">
+      <Filter>Header Files\API\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Config\MT5APIConfigGateway.h">
+      <Filter>Header Files\API\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Config\MT5APIConfigParam.h">
+      <Filter>Header Files\API\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Config\MT5APIConfigSymbol.h">
+      <Filter>Header Files\API\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Bases\MT5APIConfirm.h">
+      <Filter>Header Files\API\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Common\Bases\MT5APIRequest.h">
+      <Filter>Header Files\API\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSource\DataSource.h">
+      <Filter>Header Files\DataSource</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Str.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\StringFile.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Sync.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Thread.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\datafeed.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TextFeeder.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_books.txt" />
+    <Text Include="_news.txt" />
+    <Text Include="_ticks.txt" />
+  </ItemGroup>
+</Project>

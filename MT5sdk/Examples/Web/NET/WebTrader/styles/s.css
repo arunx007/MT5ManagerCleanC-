@@ -1,0 +1,417 @@
+﻿body
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #565656;
+    margin: 10px;
+}
+p
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #565656;
+    margin-bottom: 8px;
+    margin-top: 0px;
+}
+p.content
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #565656;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+h1
+{
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #4F6790;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 9px 0px;
+}
+h1.interface
+{
+    color: #4F6790;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    margin-top: 0;
+}
+h1.title
+{
+    color: #4F6790;
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+h2
+{
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #4F6790;
+    font-weight: bold;
+    margin: 11px 0px;
+}
+td
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+ul
+{
+    list-style-type: square;
+}
+li
+{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+input
+{
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+a
+{
+    color: #416299;
+}
+a img
+{
+    border: none;
+}
+div.main-top
+{
+    height: 45px;
+    min-width: 1000px;
+}
+div.main-top div.logo
+{
+    width: 230px;
+    float: left;
+}
+div.main-menu
+{
+    padding-left: 230px;
+    padding-top: 13px;
+}
+div.main-menu div.menu
+{
+    width: 100%;
+    position: relative;
+    background-color: #657FAB;
+    height: 32px;
+}
+div.main-menu div.menu div.top-menu
+{
+    background-color: #657FAB;
+    margin-right: 15px;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+div.main-menu div.menu div.top-menu table
+{
+    height: 32px;
+}
+div.main-menu div.menu div.top-menu span
+{
+    padding: 0px 15px 0px 0px;
+}
+div.main-menu div.menu div.top-menu span a
+{
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+div.main-menu div.menu div.top-menu span a.active
+{
+    color: #000000;
+}
+div.main-menu div.menu div.top-menu div.logout
+{
+    float: right;
+}
+div#content
+{
+    margin: 0px 0px 0px 5px;
+    border: 1px solid #B3B3B3;
+    padding: 7px;
+}
+div.border_selected_menu
+{
+    position: absolute;
+    overflow: hidden;
+    width: 3px;
+    height: 3px;
+    background-image: url("/i/border-menu-selected.gif");
+    background-repeat: no-repeat;
+    margin: 0px;
+    padding: 0px;
+}
+div.top_left_selected
+{
+    left: 0px;
+    top: 0px;
+    background-position: 0px 0px;
+}
+div.top_right_selected
+{
+    right: 0px;
+    top: 0px;
+    background-position: -3px 0px;
+}
+div.bottom_left_selected
+{
+    bottom: 0px;
+    left: 0px;
+    background-position: 0px -3px;
+}
+div.bottom_right_selected
+{
+    bottom: 0px;
+    right: 0px;
+    background-position: -3px -3px;
+}
+div.cleaner
+{
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+}
+div.topline
+{
+    width: 100%;
+    height: 1px;
+    margin: 15px 0px;
+    background-color: #B7B7B7;
+}
+div.border
+{
+    position: absolute;
+    overflow: hidden;
+    width: 5px;
+    height: 5px;
+    background-image: url("/i/border-menu.gif");
+    background-repeat: no-repeat;
+}
+
+div.top_left
+{
+    left: 0px;
+    top: 0px;
+    background-position: 0px 0px;
+}
+div.top_right
+{
+    right: 0px;
+    top: 0px;
+    background-position: -5px 0px;
+}
+div.bottom_left
+{
+    bottom: 0px;
+    left: 0px;
+    background-position: 0px -5px;
+}
+div.bottom_right
+{
+    bottom: 0px;
+    right: 0px;
+    background-position: -5px -5px;
+}
+div.border_content
+{
+    position: absolute;
+    overflow: hidden;
+    width: 5px;
+    height: 5px;
+    background-image: url("/i/border-content.gif");
+    background-repeat: no-repeat;
+}
+
+div.top_left_content
+{
+    left: -1px;
+    top: -1px;
+    background-position: 0px 0px;
+}
+div.top_right_content
+{
+    right: -1px;
+    top: -1px;
+    background-position: -5px 0px;
+}
+div.bottom_left_content
+{
+    bottom: -1px;
+    left: -1px;
+    background-position: 0px -5px;
+}
+div.bottom_right_content
+{
+    bottom: -1px;
+    right: -1px;
+    background-position: -5px -5px;
+}
+#content .bottom_left_content, #content .bottom_right_content
+{
+    margin-top: 3px;
+    bottom: auto;
+    left: auto;
+}
+#content .top_left_content, #content .top_right_content
+{
+    margin-top: -8px;
+    left: auto;
+    top: auto;
+}
+#content .top_left_content, #content .bottom_left_content
+{
+    margin-left: -8px;
+}
+
+#content .top_right_content, #content .bottom_right_content
+{
+    right: 10px;
+}
+span.field-validation-error
+{
+    color: #f00;
+    font-size: 11px;
+}
+input.field-validation-error, textarea.field-validation-error, select.field-validation-error
+{
+    border: 2px solid #f17175 !important;
+}
+div.field-validation-error
+{
+    border: 2px solid #f17175 !important;
+}
+.field-validation-error-small
+{
+    border: 1px solid #f17175 !important;
+}
+.formLogin, .formRegister
+{
+    font-size: 12px;
+    background-color: #EEF4F9;
+    border: 1px solid #D8DFEA;
+}
+.formRegister .line, .formLogin .line, .formLogin .line
+{
+    clear: both;
+    text-align: left;
+    line-height: 24px;
+    overflow: hidden;
+    zoom: 1;
+    margin: 5px 0px;
+}
+
+.formLogin .line label
+{
+    float: left;
+    width: 100px;
+    text-align: right;
+}
+
+.formRegister .line label
+{
+    float: left;
+    width: 140px;
+    text-align: right;
+}
+.formRegister .inputWrapper, .formLogin .inputWrapper, .forgottenForm .inputWrapper
+{
+    border: 1px solid #dadada;
+    width: 185px;
+    padding: 0px;
+    background-color: #fff;
+}
+
+.formLogin .offset
+{
+    padding: 0px 0px 0px 105px;
+}
+.formRegister .offset
+{
+    padding: 0px 0px 0px 150px;
+}
+div.offset *
+{
+    vertical-align: middle;
+}
+.formRegister .inputWrapper input, .formLogin .inputWrapper input, .forgottenForm .inputWrapper input
+{
+    border-width: 0px;
+    padding: 0px;
+    margin: 3px;
+    vertical-align: middle;
+    outline: none;
+    zoom: 1;
+}
+
+
+.formRegister .line label
+{
+    width: 135px;
+    float: left;
+}
+.formRegister .offset
+{
+    padding-left: 140px;
+}
+.formRegister .inputWrapper
+{
+    width: 246px;
+}
+.formRegister img
+{
+    float: left;
+    width: 100px;
+    height: 40px;
+}
+.buttonActive, .buttonInactive
+{
+    height: 26px;
+}
+table.base_table
+{
+    background-color: #B3B3B3;
+    table-layout: auto;
+}
+table.base_table tr
+{
+    background-color: #FBFBFB;
+    height: 24px;
+}
+table.standart-list tr.title
+{
+    background-color: #cfcfcf;
+}
+table.standart-list tr.odd
+{
+    background-color: #F4F4F4;
+}
+table.base_table th
+{
+    font-size: 12px;
+    padding: 0px 5px;
+    margin: 0px;
+    text-align: right;
+    color: #565656;
+    background-color: #DEDEDE;
+    white-space: nowrap;
+}
+table.base_table td
+{
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    color: #565656;
+    vertical-align: middle;
+    text-align: right;
+}
+span.logout
+{
+    float: right;
+}

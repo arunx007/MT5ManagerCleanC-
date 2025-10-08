@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="WebTrader.Helpers" %>
+<%@ Import Namespace="WebTrader.Models.Users" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="/styles/s.css" rel="stylesheet" type="text/css" />
+    <script src="/js/validator.js" type="text/javascript"></script>
+</head>
+<body>
+   <div class="main-top">
+      <div class="logo"><a href="/"><img src="/i/metaquotes.gif" width="203" height="45" alt="MetaQuotes Software Corp." title="MetaQuotes Software Corp." border="0"></a></div>
+      <div class="main-menu">
+         <div>
+            <div class="menu">
+               <div class="border top_right"></div>
+               <div class="border top_left"></div>
+               <div class="border bottom_right"></div>
+               <div class="border bottom_left"></div>
+               <div class="top-menu">
+
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+<%if(UserState.IsLoggedIn)
+    {
+%>                     <td><span class="logout"><a href="/logout">Logout</a></span>
+                     <%=Html.BuildMenu()%>
+                     
+                     </td>
+<%
+    }
+%>                  </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="topline"><img src="/i/0.gif" alt="" width="1" height="1"></div>
+   <table cellpadding="0" cellspacing="0" border="0" width="100%">
+   <tr>
+<%
+   if(UserState.IsLoggedIn)
+  {
+%>      
+      <td style="width:20px;"></td>
+<%
+  }
+%>      <td valign="top">
+<%
+   if(UserState.IsLoggedIn)
+     {
+%>         <div id="content">
+            <div class="border_content top_right_content"></div>
+            <div class="border_content top_left_content"></div>
+<% 
+     }
+%>          <asp:ContentPlaceHolder ID="MainContent" runat="server" /><%
+   if(UserState.IsLoggedIn)
+     {
+%>            <div class="border_content bottom_right_content"></div>
+            <div class="border_content bottom_left_content"></div>
+         </div>
+<% 
+     }
+%>      </td>
+   </tr>
+   </table>
+   <div style="padding:8px 0px 8px 5px;width:100%;text-align:center">Copyright 2000-<%=DateTime.Now.Year %>, <a href="http://www.metaquotes.net" target="_blank">MetaQuotes Software Corp.</a> </div>
+</body>
+</html>

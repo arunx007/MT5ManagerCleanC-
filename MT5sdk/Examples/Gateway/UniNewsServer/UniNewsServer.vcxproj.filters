@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{f26e6dcc-ea7f-4654-8350-7f1f82104231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UniNewsAPI">
+      <UniqueIdentifier>{a131ba9a-e234-4dd0-964d-458e5a1f0ee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UniNewsAPI\Contexts">
+      <UniqueIdentifier>{fd33406e-26e4-43de-af3b-d9a39a0f9f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UniNewsAPI\Common">
+      <UniqueIdentifier>{58a5d3a3-2104-477d-b5cb-3ddc49ba25ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UniNewsAPI\Bases">
+      <UniqueIdentifier>{f79e4c5b-d4a6-436b-882c-d142cfeac0c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{e17994f3-2c91-43c8-83e7-b3b173c14c7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{1c081df7-1367-4d4d-bcc5-7e9066314231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UniNewsAPI">
+      <UniqueIdentifier>{82001575-2b53-4405-b1c0-a7037c03a654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UniNewsAPI\Contexts">
+      <UniqueIdentifier>{f921719b-cb0f-490a-a176-a72ea03e8846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UniNewsAPI\Common">
+      <UniqueIdentifier>{819c1a22-c000-4f2d-bf79-8ee14fa14d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UniNewsAPI\Bases">
+      <UniqueIdentifier>{0cebe071-c69e-44d0-896b-a5949eb3d187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{1d6a6ca0-5acd-4409-8bbe-1a29b0e1642c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\news">
+      <UniqueIdentifier>{615a2a74-74b3-4ea1-9903-f020704641ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\news\italian.Ciao!_files">
+      <UniqueIdentifier>{f4a52431-e693-4e61-8502-7626f028f894}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Logger.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="MTUniNewsServerApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UniNewsServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UniNewsAPI\Common\UniNewsProtocol.cpp">
+      <Filter>Source Files\UniNewsAPI\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="UniNewsAPI\Contexts\UniNewsContext.cpp">
+      <Filter>Source Files\UniNewsAPI\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="UniNewsAPI\Contexts\UniNewsServerPort.cpp">
+      <Filter>Source Files\UniNewsAPI\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="UniNewsAPI\Bases\UniNewsSource.cpp">
+      <Filter>Source Files\UniNewsAPI\Bases</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\MIMEConverter.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\SHA256.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Const.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Logger.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="MTUniNewsServerApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsContextBase.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsg.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgLogin.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgLoginResult.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgLogout.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgNews.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgPing.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsMsgSubscribe.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsProtocol.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Common\UniNewsProtocolData.h">
+      <Filter>Header Files\UniNewsAPI\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Contexts\UniNewsContext.h">
+      <Filter>Header Files\UniNewsAPI\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Contexts\UniNewsServerPort.h">
+      <Filter>Header Files\UniNewsAPI\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="UniNewsAPI\Bases\UniNewsSource.h">
+      <Filter>Header Files\UniNewsAPI\Bases</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\MIMEConverter.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\SHA256.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\datafeed.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\news\italian.Ciao!_files\welcome-en.jpg">
+      <Filter>Resource Files\news\italian.Ciao!_files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UniNewsServer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\news\english.Welcome!.mht">
+      <Filter>Resource Files\news</Filter>
+    </None>
+    <None Include="res\news\russian.Добро пожаловать!.mht">
+      <Filter>Resource Files\news</Filter>
+    </None>
+    <None Include="res\news\italian.Ciao!.htm">
+      <Filter>Resource Files\news</Filter>
+    </None>
+  </ItemGroup>
+</Project>

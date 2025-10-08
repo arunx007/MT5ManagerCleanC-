@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Reports">
+      <UniqueIdentifier>{678ddb9a-5e70-47b0-827b-8a2d20e35a40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Reports">
+      <UniqueIdentifier>{0672f94b-c746-4f5f-94ac-f84e1ae4a43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{4cc76a1b-7460-4ca9-a1b9-7342891328df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{0eb0fe0a-cc97-491b-b372-0c11c35b4afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Cache">
+      <UniqueIdentifier>{80f8f2c4-ef4f-4631-bb43-4a5f685e7e22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cache">
+      <UniqueIdentifier>{5c83c4ea-5ff8-489a-9201-899a59473b0f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Capital.Standard.Reports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailyReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\DatasetField.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ReportColumn.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\UserCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\DepositCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\CurrencyConverter.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\BalanceCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ReportInterval.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientUserCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\UserFilter.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\CurrencyConverterCache.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCacheChild.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCacheSelect.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCacheSelectTime.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientFilter.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailyLeadSourceReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailyCountryReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailyLeadCampaignReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedClientReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedUserReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedCountryReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedLeadCampaignReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedLeadSourceReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientBalanceCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ReportTop.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ReportParameter.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientUserBalanceCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\CurrencyReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailyUserReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ClientFtdCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\FtdSection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\FtdSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvDetailedSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvSection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\LtvSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowDailySectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\FtdTotalSection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\FtdTotalSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\ActivityReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\ActivitySection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\ActivityPeriodSection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\FtdReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\RetentionSection.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\RetentionSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\UserActivityCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\RetentionUserSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\DealCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCacheTime.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealProfitReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealSectionReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealCountryReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealReasonReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\DealWeekCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\DealWeekReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\UserGroupCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\MoneyFlowWeekReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\UserGroupFilter.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\RequestParameter.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Reports\RiskAppetiteReport.cpp">
+      <Filter>Source Files\Reports</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\DealBaseCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\DealUserCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Cache\ReportCacheKeysTime.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailyReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\DatasetField.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportColumn.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportError.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\UserCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\DepositCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\CurrencyConverter.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\BalanceCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportInterval.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientUserCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\UserFilter.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\CurrencyConverterCache.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportVector.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportMatrix.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportTop.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportDictionary.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCacheChild.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCacheSelect.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCacheSelectTime.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientFilter.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportFactory.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailyLeadSourceReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailyLeadCampaignReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailyCountryReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedClientReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedUserReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedCountryReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedLeadCampaignReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedLeadSourceReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientBalanceCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportParameter.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientUserBalanceCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\CurrencyReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailyUserReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ClientFtdCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportMoneyGroup.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportMoneySection.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\FtdSection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\FtdSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvDetailedSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvSection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\LtvSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowDailySectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\FtdTotalSection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\FtdTotalSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ActivityReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ActivitySection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\ActivityPeriodSection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\FtdReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\RetentionSection.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\RetentionSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\UserActivityCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\RetentionUserSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\DealCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCacheTime.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealProfitReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealSectionReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealCountryReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealReasonReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\DealWeekCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\DealWeekReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\UserGroupCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\MoneyFlowWeekReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\UserGroupFilter.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\RequestParameter.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ReportTimer.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Reports\RiskAppetiteReport.h">
+      <Filter>Header Files\Reports</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\DealBaseCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\DealUserCache.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Cache\ReportCacheKeysTime.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Capital.Standard.Reports.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MoneyFlow.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

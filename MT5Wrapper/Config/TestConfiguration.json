@@ -1,0 +1,37 @@
+{
+  "TestEnvironment": {
+    "MT5Credentials": {
+      "ManagerLogin": "1006",
+      "ManagerPassword": "Meta@5757",
+      "Server": "86.104.251.165:443",
+      "TestClientLogin": "100267",
+      "TestClientPassword": "Test@123"
+    },
+    "TestTenant": {
+      "TenantId": "test_mgr_001",
+      "ManagerName": "Test Manager",
+      "Email": "test@mt5api.com"
+    },
+    "TestSettings": {
+      "EnableDetailedLogging": true,
+      "TestTimeoutSeconds": 30,
+      "MaxRetryAttempts": 3,
+      "DelayBetweenTestsMs": 1000
+    },
+    "TestSymbols": [
+      "EURUSD",
+      "GBPUSD",
+      "USDJPY",
+      "AUDUSD",
+      "USDCAD"
+    ],
+    "TestUsers": [
+      {
+        "Login": 100267,
+        "Name": "Test Client",
+        "Group": "demo",
+        "ExpectedBalance": 10000
+      }
+    ]
+  }
+}

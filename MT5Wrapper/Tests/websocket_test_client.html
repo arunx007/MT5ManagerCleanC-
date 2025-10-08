@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT5 Position WebSocket Test Client</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .connected { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .disconnected { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .connecting { background-color: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        button:hover { opacity: 0.9; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-success { background-color: #28a745; color: white; }
+        .btn-danger { background-color: #dc3545; color: white; }
+        .btn-info { background-color: #17a2b8; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+        .log-area {
+            height: 300px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        .positions-area {
+            height: 400px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .position-item {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .position-header {
+            font-weight: bold;
+            color: #495057;
+        }
+        .position-details {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MT5 Position WebSocket Test Client</h1>
+
+        <div id="connectionStatus" class="status disconnected">
+            Disconnected from WebSocket
+        </div>
+
+        <div class="controls">
+            <button id="connectBtn" class="btn-primary" onclick="connect()">Connect</button>
+            <button id="disconnectBtn" class="btn-danger" onclick="disconnect()" disabled>Disconnect</button>
+            <button id="subscribeBtn" class="btn-success" onclick="subscribeToPositions()" disabled>Subscribe to Positions (100267)</button>
+            <button id="unsubscribeBtn" class="btn-secondary" onclick="unsubscribeFromPositions()" disabled>Unsubscribe</button>
+            <button id="getSnapshotBtn" class="btn-info" onclick="getPositionsSnapshot()" disabled>Get Snapshot</button>
+            <button id="getStatusBtn" class="btn-info" onclick="getPositionStatus()" disabled>Get Status</button>
+            <button id="clearLogBtn" class="btn-secondary" onclick="clearLog()">Clear Log</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="activeSubs">0</div>
+                <div class="stat-label">Active Subscriptions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalUpdates">0</div>
+                <div class="stat-label">Total Updates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="uptime">0s</div>
+                <div class="stat-label">Service Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="positionCount">0</div>
+                <div class="stat-label">Current Positions</div>
+            </div>
+        </div>
+
+        <h3>Positions</h3>
+        <div id="positionsArea" class="positions-area">
+            <p>No positions received yet...</p>
+        </div>
+
+        <h3>WebSocket Log</h3>
+        <div id="logArea" class="log-area"></div>
+    </div>
+
+    <script>
+        let connection = null;
+        let isConnected = false;
+        let clientLogin = 100267; // Test client
+
+        function log(message, type = 'info') {
+            const logArea = document.getElementById('logArea');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#dc3545' :
+                         type === 'success' ? '#28a745' :
+                         type === 'warning' ? '#ffc107' : '#007bff';
+            logArea.innerHTML += `<div style="color: ${color}">[${timestamp}] ${message}</div>`;
+            logArea.scrollTop = logArea.scrollHeight;
+        }
+
+        function updateConnectionStatus(status, message) {
+            const statusDiv = document.getElementById('connectionStatus');
+            statusDiv.className = `status ${status}`;
+            statusDiv.textContent = message;
+        }
+
+        function updateButtons(connected) {
+            document.getElementById('connectBtn').disabled = connected;
+            document.getElementById('disconnectBtn').disabled = !connected;
+            document.getElementById('subscribeBtn').disabled = !connected;
+            document.getElementById('unsubscribeBtn').disabled = !connected;
+            document.getElementById('getSnapshotBtn').disabled = !connected;
+            document.getElementById('getStatusBtn').disabled = !connected;
+        }
+
+        function updateStats(stats) {
+            if (stats.activeSubscriptions !== undefined) {
+                document.getElementById('activeSubs').textContent = stats.activeSubscriptions;
+            }
+            if (stats.totalUpdates !== undefined) {
+                document.getElementById('totalUpdates').textContent = stats.totalUpdates;
+            }
+            if (stats.uptimeSeconds !== undefined) {
+                document.getElementById('uptime').textContent = `${stats.uptimeSeconds}s`;
+            }
+        }
+
+        function displayPositions(positions) {
+            const positionsArea = document.getElementById('positionsArea');
+            document.getElementById('positionCount').textContent = positions.length;
+
+            if (positions.length === 0) {
+                positionsArea.innerHTML = '<p>No positions available...</p>';
+                return;
+            }
+
+            positionsArea.innerHTML = positions.map(pos => `
+                <div class="position-item">
+                    <div class="position-header">
+                        ${pos.symbol} - ${pos.type} (ID: ${pos.positionId})
+                    </div>
+                    <div class="position-details">
+                        Volume: ${pos.volume} | Price: ${pos.priceCurrent?.toFixed(5) || 'N/A'} |
+                        P/L: ${pos.profit?.toFixed(2) || 'N/A'} | SL: ${pos.stopLoss || 'N/A'} | TP: ${pos.takeProfit || 'N/A'}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function connect() {
+            try {
+                updateConnectionStatus('connecting', 'Connecting to WebSocket...');
+                log('Attempting to connect to WebSocket...', 'info');
+
+                // Use the correct SignalR connection URL
+                connection = new signalR.HubConnectionBuilder()
+                    .withUrl('http://localhost:5001/hubs/marketdata')
+                    .withAutomaticReconnect()
+                    .configureLogging(signalR.LogLevel.Information)
+                    .build();
+
+                // Set up event handlers
+                connection.on('Connected', (data) => {
+                    log(`Connected: ${JSON.stringify(data)}`, 'success');
+                });
+
+                connection.on('PositionSubscribed', (data) => {
+                    log(`Position Subscribed: ${JSON.stringify(data)}`, 'success');
+                });
+
+                connection.on('PositionUnsubscribed', (data) => {
+                    log(`Position Unsubscribed: ${JSON.stringify(data)}`, 'info');
+                });
+
+                connection.on('PositionSnapshot', (data) => {
+                    log(`Position Snapshot: ${data.count} positions for client ${data.clientLogin}`, 'info');
+                    displayPositions(data.positions || []);
+                });
+
+                connection.on('PositionAdd', (data) => {
+                    log(`Position Added: ${JSON.stringify(data)}`, 'success');
+                    // In a real app, you'd update the positions list
+                });
+
+                connection.on('PositionUpdate', (data) => {
+                    log(`Position Updated: ${JSON.stringify(data)}`, 'info');
+                    // In a real app, you'd update the specific position
+                });
+
+                connection.on('PositionDelete', (data) => {
+                    log(`Position Deleted: ${JSON.stringify(data)}`, 'warning');
+                    // In a real app, you'd remove the position from the list
+                });
+
+                connection.on('PositionStatus', (data) => {
+                    log(`Position Status: ${JSON.stringify(data)}`, 'info');
+                    updateStats(data);
+                });
+
+                connection.on('Error', (data) => {
+                    log(`Error: ${JSON.stringify(data)}`, 'error');
+                });
+
+                // Handle connection events
+                connection.onclose(() => {
+                    isConnected = false;
+                    updateConnectionStatus('disconnected', 'Disconnected from WebSocket');
+                    updateButtons(false);
+                    log('WebSocket connection closed', 'warning');
+                });
+
+                connection.onreconnecting(() => {
+                    updateConnectionStatus('connecting', 'Reconnecting to WebSocket...');
+                    log('Reconnecting to WebSocket...', 'warning');
+                });
+
+                connection.onreconnected(() => {
+                    isConnected = true;
+                    updateConnectionStatus('connected', 'Reconnected to WebSocket');
+                    updateButtons(true);
+                    log('Reconnected to WebSocket', 'success');
+                });
+
+                // Start the connection
+                await connection.start();
+                isConnected = true;
+                updateConnectionStatus('connected', 'Connected to WebSocket');
+                updateButtons(true);
+                log('Successfully connected to WebSocket', 'success');
+
+            } catch (error) {
+                updateConnectionStatus('disconnected', 'Failed to connect to WebSocket');
+                log(`Connection failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function disconnect() {
+            if (connection) {
+                try {
+                    await connection.stop();
+                    isConnected = false;
+                    updateConnectionStatus('disconnected', 'Disconnected from WebSocket');
+                    updateButtons(false);
+                    log('Successfully disconnected from WebSocket', 'info');
+                } catch (error) {
+                    log(`Disconnect failed: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        async function subscribeToPositions() {
+            if (!isConnected || !connection) return;
+
+            try {
+                log(`Subscribing to positions for client ${clientLogin}...`, 'info');
+                await connection.invoke('SubscribeToPositions', clientLogin);
+            } catch (error) {
+                log(`Subscribe failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function unsubscribeFromPositions() {
+            if (!isConnected || !connection) return;
+
+            try {
+                log(`Unsubscribing from positions for client ${clientLogin}...`, 'info');
+                await connection.invoke('UnsubscribeFromPositions', clientLogin);
+            } catch (error) {
+                log(`Unsubscribe failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function getPositionsSnapshot() {
+            if (!isConnected || !connection) return;
+
+            try {
+                log(`Requesting positions snapshot for client ${clientLogin}...`, 'info');
+                await connection.invoke('GetPositionsSnapshot', clientLogin);
+            } catch (error) {
+                log(`Get snapshot failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function getPositionStatus() {
+            if (!isConnected || !connection) return;
+
+            try {
+                log('Requesting position service status...', 'info');
+                await connection.invoke('GetPositionStatus');
+            } catch (error) {
+                log(`Get status failed: ${error.message}`, 'error');
+            }
+        }
+
+        function clearLog() {
+            document.getElementById('logArea').innerHTML = '';
+        }
+
+        // Initialize when page loads
+        window.onload = function() {
+            log('WebSocket test client loaded. Click "Connect" to start testing.', 'info');
+        };
+    </script>
+
+    <!-- SignalR JavaScript library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.min.js"></script>
+</body>
+</html>

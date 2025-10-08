@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BD614BA-8497-448C-B4C0-2C860013629A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetaQuotes.MT5WebAPI</RootNamespace>
+    <AssemblyName>MetaQuotes.MT5WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\MTAccount.cs" />
+    <Compile Include="Common\MTConCommision.cs" />
+    <Compile Include="Common\MTConCommon.cs" />
+    <Compile Include="Common\MTConGroup.cs" />
+    <Compile Include="Common\MTConGroupSymbol.cs" />
+    <Compile Include="Common\MTConSymbol.cs" />
+    <Compile Include="Common\MTConTime.cs" />
+    <Compile Include="Common\MTDeal.cs" />
+    <Compile Include="Common\MTOrder.cs" />
+    <Compile Include="Common\MTPosition.cs" />
+    <Compile Include="Common\MTTick.cs" />
+    <Compile Include="Common\MTUser.cs" />
+    <Compile Include="Common\Protocol\MTAPIBase.cs" />
+    <Compile Include="Common\Protocol\MTAsyncConnect.cs" />
+    <Compile Include="Common\Protocol\MTAsyncSend.cs" />
+    <Compile Include="Common\Protocol\MTAuth.cs" />
+    <Compile Include="Common\Protocol\MTBaseAnswer.cs" />
+    <Compile Include="Common\Protocol\MTCommonBase.cs" />
+    <Compile Include="Common\Protocol\MTConnect.cs" />
+    <Compile Include="Common\Protocol\MTCrypt.cs" />
+    <Compile Include="Common\Protocol\MTCryptAES.cs" />
+    <Compile Include="Common\Protocol\MTCustomBase.cs" />
+    <Compile Include="Common\Protocol\MTDealBase.cs" />
+    <Compile Include="Common\Protocol\MTGroupBase.cs" />
+    <Compile Include="Common\Protocol\MTHistoryBase.cs" />
+    <Compile Include="Common\Protocol\MTMailBase.cs" />
+    <Compile Include="Common\Protocol\MTNewsBase.cs" />
+    <Compile Include="Common\Protocol\MTOrderBase.cs" />
+    <Compile Include="Common\Protocol\MTParseProtocol.cs" />
+    <Compile Include="Common\Protocol\MTPingBase.cs" />
+    <Compile Include="Common\Protocol\MTPositionBase.cs" />
+    <Compile Include="Common\Protocol\MTProtocolConsts.cs" />
+    <Compile Include="Common\Protocol\MTProtocolHeader.cs" />
+    <Compile Include="Common\Protocol\MTServerBase.cs" />
+    <Compile Include="Common\Protocol\MTSymbolBase.cs" />
+    <Compile Include="Common\Protocol\MTTickBase.cs" />
+    <Compile Include="Common\Protocol\MTTimeBase.cs" />
+    <Compile Include="Common\Protocol\MTTradeBase.cs" />
+    <Compile Include="Common\Protocol\MTUserBase.cs" />
+    <Compile Include="Common\Utils\MTDataHelper.cs" />
+    <Compile Include="Common\Utils\MTJSONWriter.cs" />
+    <Compile Include="Common\Utils\MTLog.cs" />
+    <Compile Include="Common\Utils\MTNetSocket.cs" />
+    <Compile Include="Common\Utils\MTUtils.cs" />
+    <Compile Include="MT5WebAPI.cs" />
+    <Compile Include="MTFormat.cs" />
+    <Compile Include="MTRetCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>signtool.exe sign /d "MetaTrader 5 Web .NET API" /du https://www.metaquotes.net /sha1 37580760a59063770a37fab3e5e49f9f615af05a /t http://timestamp.digicert.com "$(TargetPath)"
+copy "$(TargetPath)" "..\..\..\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+   <title>
+      <mt5:report_name/>: <mt5:server/>, <mt5:from/> - <mt5:to />
+   </title>
+     <style type="text/css">  
+   <!--
+      body           { margin: 3px; }
+      h3             { font-family: Tahoma,Arial;}
+      table          { border-collapse: collapse;}
+      th             { font: 0pt Tahoma,Arial;}
+      td,p,li        { font: 8pt Tahoma,Arial;}
+      td.title       { font: 10pt Tahoma,Arial;border-bottom: solid 2px black;font-weight: bold;}
+      td.header      { border-bottom: solid 2px black;}
+      td.sep         { border-top: solid 1px black;}
+      tr.line0       { background: #FFFFFF;}
+      tr.line1       { background: #F4F4F4;}
+      div            { font: 8pt Tahoma,Arial;}
+      div.income     { color: darkgreen; }
+      div.outcome    { color: darkred; }
+      .msdate        { mso-number-format: "General Date";}
+      .mspt          { mso-number-format: \#\,\#\#0\.00;text-align: right;}
+      .msptbold      { mso-number-format: \#\,\#\#0\.00;text-align: right;font-weight: bold;}
+      .msdig         { white-space: nowrap; text-align: right;}
+      .mstext        { text-align: left;}
+      .bold          { font-weight: bold;}
+      .short_vertical_space   {height: 40px;}
+      //-->
+   </style>
+</head>
+<body>
+      
+   <div>This table displays the volumes of clients' deposits and withdrawals by their registration countries. 
+      The data is displayed by periods of one month. Not more than <mt5:top_n_countries /> (customizable) countries with the highest total flow of funds are displayed. 
+      If a request contains more than 12 months, only data for the last 12 months is displayed in the table. 
+      All values are shown in <mt5:common_currency/> (customizable) currency for ease of comparison. 
+      Depositing to an account by clients is displayed in green. Fund withdrawals are displayed in red.</div>
+   <mt5:summary_table>
+      <table cellspacing="0" cellpadding="4" border="0" width="100%">
+         <tr height="4">
+            <td width="16%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+            <td width="7%">&nbsp;</td>
+         </tr>
+         <tr>
+            <td class="title" align="left">Country</td>
+            <mt5:st_months_empty_counter><td class="header" align="right"></td></mt5:st_months_empty_counter>
+            <mt5:st_months_counter><td class="header" align="right"><mt5:st_month_name/></td></mt5:st_months_counter>
+         </tr>
+         <mt5:st_countries_counter>
+            <tr class="line<mt5:st_country_line/>">
+               <td class="mstext"><mt5:st_country/></td>
+               <mt5:st_months_empty_counter>
+                  <td class="" align="right"></td>
+               </mt5:st_months_empty_counter>
+               <mt5:st_months_counter>
+                  <td class="msdig"><div class="income"><mt5:st_month_income_value/></div><div class="outcome"><mt5:st_month_outcome_value/></div></td>
+               </mt5:st_months_counter>
+            </tr>
+         </mt5:st_countries_counter>
+      </table>
+   </mt5:summary_table>
+
+   <div class="short_vertical_space"></div>
+
+   <div>Deposits and Withdrawals graphs display the total volume of funds deposited and withdrawn by clients as percentage shares. Not more than <mt5:top_n_countries /> (customizable) countries with the highest total value of funds deposited and withdrawn by clients for the entire period are displayed. All values are shown in <mt5:common_currency/> (customizable) for ease of comparison.</div>
+   <table cellspacing="1" cellpadding="3" border="0" width="100%">
+      <tr>
+         <mt5:income_exist><td style="height:400px;"><mt5:pie_chart_income/></td></mt5:income_exist>
+         <mt5:outcome_exist><td style="height:400px;"><mt5:pie_chart_outcome/></td></mt5:outcome_exist>
+      </tr>
+   </table>
+
+   <div class="short_vertical_space"></div>
+
+   <mt5:income_exist>
+      <div>The graph allows assessing the overall trend in depositing trading accounts by clients. The period applied in the graph depends on the interval. If a request contains up to 30 days, each graph point displays one-day values. In case there are up to 60 days in a request, results for one week are shown and, finally, if there are more than 60 days, each point stands for one-month values. The graph consists of three lines:</div>
+      <ul>
+         <li><b>Amount</b> line shows the amount of funds deposited by clients at each interval. All values are shown in <mt5:common_currency/> (customizable) for more convenience;</li>
+         <li><b>Count</b> line shows the amount of funds depositing operations at each interval;</li>
+         <li><b>Average</b> line shows the average value of funds deposited to accounts at each interval.</li>
+      </ul>
+      <table cellspacing="1" cellpadding="3" border="0" width="100%">
+            <tr>
+               <td style="height:400px;"><mt5:chart_money_income_total/></td>
+            </tr>
+      </table>
+      <div class="short_vertical_space"></div>
+   </mt5:income_exist>
+
+   <mt5:outcome_exist>
+      <div>The graph allows assessing the overall trend in withdrawing the funds from trading accounts by clients. The period applied in the graph depends on the interval. If a request contains up to 30 days, each graph point displays one-day values. In case there are up to 60 days in a request, results for one week are shown and, finally, if there are more than 60 days, each point stands for one-month values. The graph consists of three lines:</div>
+      <ul>   
+         <li><b>Amount</b> line shows the amount of funds withdrawn by clients at each interval. All values are shown in <mt5:common_currency/> (customizable) for more convenience;</li>
+         <li><b>Count</b> line shows the amount of funds withdrawal operations at each interval;</li>
+         <li><b>Average</b> line shows the average value of funds withdrawn from accounts at each interval.</li>
+      </ul>
+      <table cellspacing="1" cellpadding="3" border="0" width="100%">
+            <tr>
+               <td style="height:400px;"><mt5:chart_money_outcome_total/></td>
+            </tr>
+      </table>
+      <div class="short_vertical_space"/>
+   </mt5:outcome_exist>
+
+   <mt5:income_exist>
+         <div>The graph allows assessing the trend in depositing trading accounts by clients by each country. Not more than <mt5:top_n_countries /> (customizable) countries with the highest total value of depositing funds by clients for the entire period are displayed. The period applied in the graph depends on the interval. If a request contains up to 30 days, each graph point displays one-day values. In case there are up to 60 days in a request, results for one week are shown and, finally, if there are more than 60 days, each point stands for one-month values. The graph consists of three lines:</div>
+         <ul>
+            <li><b>Amount</b> line shows the amount of funds deposited by clients at each interval. All values are shown in <mt5:common_currency/> (customizable) for more convenience;</li>
+            <li><b>Count</b> line shows the amount of funds depositing operations at each interval;</li>
+            <li><b>Average</b> line shows the average value of funds deposited to accounts at each interval.</li>
+         </ul>
+      <table cellspacing="1" cellpadding="3" border="0" width="100%">      
+            <tr>
+               <td style="height:400px;"><mt5:chart_money_income/></td>
+            </tr>
+      </table>
+      <div class="short_vertical_space"></div>
+   </mt5:income_exist>
+
+   <mt5:outcome_exist>
+      <div>The graph allows assessing the trend in funds withdrawal from trading accounts by clients by each country. Not more than <mt5:top_n_countries /> (customizable) countries with the highest total value of funds withdrawn by clients for the entire period are displayed. The period applied in the graph depends on the interval. If a request contains up to 30 days, each graph point displays one-day values. In case there are up to 60 days in a request, results for one week are shown and, finally, if there are more than 60 days, each point stands for one-month values. The graph consists of three lines:</div>
+      <ul>
+      <li><b>Amount</b> line shows the amount of funds deposited by clients at each interval. All values are shown in <mt5:common_currency/> (customizable) for more convenience;</li>
+      <li><b>Count</b> line shows the amount of funds withdrawal operations at each interval;</li>
+      <li><b>Average</b> line shows the average value of funds withdrawn from accounts at each interval.</li>
+      </ul>
+      <table cellspacing="1" cellpadding="3" border="0" width="100%">
+         <tr>
+            <td style="height:400px;"><mt5:chart_money_outcome/></td>
+         </tr>
+      </table>
+      <div class="short_vertical_space"></div>
+   </mt5:outcome_exist>
+
+   <div>The table provides an opportunity to evaluate the company's profit based on the clients turnover. The data is displayed in blocks for each client group showing amount for each month.</div>
+   <ul>
+      <li><b>Group</b> column contains the name of a client group;</li>
+      <li><b>Date</b> column displays the month, for which all the total amounts for the group are shown;</li>
+      <li><b>Deposits</b> column shows the amount of all funds deposited by the specified group's clients to their accounts for the appropriate month in this group's currency;</li>
+      <li><b>Withdrawals</b> column shows the amount of all funds withdrawn by the specified group's clients from their accounts for the appropriate month in this group's currency;</li>
+      <li><b>Deposits-Withdrawals</b> column displays the difference between the amount of deposited and withdrawn funds in this group's currency;</li>
+      <li><b>Deals count</b> column displays the number of deals performed by clients;</li>
+      <li><b>Turnover</b> column shows trade turnover of performed deals in the account group's currency. Calculation: number of lots * contract size. Then, the obtained value is reduced to the single currency;</li>
+      <li><b>Revenue</b> column shows the company's revenue from every million of the client's trade turnover. Calculation: (Deposits - Withdrawals) * 1 000 000 / Turnover. Currency is specified in the next column;</li>
+      <li><b>Currency</b> column displays the account group's currency.</li>
+   </ul>
+   <mt5:revenue_table>
+      <table cellspacing="0" cellpadding="4" border="0" width="100%">
+         <tr height="4">
+            <td width="20%" class="title" align="left">Group</td>
+            <td width="10%" class="header" align="right">Date</td>
+            <td width="10%" class="header" align="right">Deposits</td>
+            <td width="10%" class="header" align="right">Withdrawals</td>
+            <td width="10%" class="header" align="right">Deposits - Withdrawals</td>
+            <td width="10%" class="header" align="right">Deals count</td>
+            <td width="15%" class="header" align="right">Overturn</td>
+            <td width="10%" class="header" align="right">Revenue</td>
+            <td width="5%" class="header" align="left">Currency</td>
+         </tr>
+         <mt5:rt_group_counter>
+            <mt5:rt_month_counter>
+            <tr class="line<mt5:rt_line/>">
+               <td align="left"><mt5:rt_name /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_date /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_deposits /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_withdrawals /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_delta /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_count /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_turnover /></td>
+               <td class="<mt5:rt_sep_s/>msdig" align="right"><mt5:rt_revenue /></td>
+               <td class="<mt5:rt_sep/>" align="left"><mt5:rt_currency /></td>
+            </tr>
+            </mt5:rt_month_counter>
+         </mt5:rt_group_counter>
+      </table>
+   </mt5:revenue_table>
+
+</body>
+</html>

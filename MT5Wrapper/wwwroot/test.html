@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT5Wrapper Complete Test Suite</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .auth-section { background-color: #e8f4f8; }
+        .api-section { background-color: #f0f8e8; }
+        .websocket-section { background-color: #fff8e8; }
+        .data-section { background-color: #f8e8f0; }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .status.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .status.info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .status.warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        input, button, select {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover { background-color: #0056b3; }
+        button:disabled { background-color: #6c757d; cursor: not-allowed; }
+        .log {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        .data-display {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .flex {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .symbol-input { width: 100px; }
+        .test-results { margin-top: 10px; }
+        .test-result { margin: 5px 0; padding: 5px; border-radius: 3px; }
+        .test-result.pass { background-color: #d4edda; color: #155724; }
+        .test-result.fail { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 MT5Wrapper Complete Test Suite</h1>
+
+        <!-- Authentication Section -->
+        <div class="section auth-section">
+            <h3>🔐 Authentication</h3>
+            <div class="flex">
+                <input type="text" id="tokenInput" placeholder="Enter JWT Token" style="flex: 1;">
+                <button onclick="setToken()">Set Token</button>
+                <button onclick="getToken()">Get Manager Token</button>
+            </div>
+            <div id="authStatus" class="status error">Not authenticated</div>
+        </div>
+
+        <!-- API Testing Section -->
+        <div class="section api-section">
+            <h3>🔗 API Testing</h3>
+            <div class="flex">
+                <select id="symbolSelect">
+                    <option value="EURUSD">EURUSD</option>
+                    <option value="GBPUSD">GBPUSD</option>
+                    <option value="USDJPY">USDJPY</option>
+                    <option value="AUDUSD">AUDUSD</option>
+                    <option value="USDCHF">USDCHF</option>
+                    <option value="USDCAD">USDCAD</option>
+                </select>
+                <button onclick="testTickData()">Test Tick Data</button>
+                <button onclick="testAllSymbols()">Test All Symbols</button>
+                <button onclick="testHealth()">Test Health</button>
+            </div>
+            <div id="apiResults" class="test-results"></div>
+        </div>
+
+        <!-- WebSocket Section -->
+        <div class="section websocket-section">
+            <h3>🌐 WebSocket Testing</h3>
+            <div class="flex">
+                <button onclick="connectWebSocket()" id="connectBtn">Connect</button>
+                <button onclick="disconnectWebSocket()" id="disconnectBtn" disabled>Disconnect</button>
+                <button onclick="testPing()">Ping</button>
+            </div>
+            <div class="flex">
+                <input type="text" id="wsSymbolInput" class="symbol-input" placeholder="EURUSD" value="EURUSD">
+                <button onclick="subscribeTicks()">Subscribe Ticks</button>
+                <button onclick="unsubscribeTicks()">Unsubscribe Ticks</button>
+            </div>
+            <div id="wsStatus" class="status error">WebSocket disconnected</div>
+        </div>
+
+        <!-- Live Data Display -->
+        <div class="section data-section">
+            <h3>📊 Live Data</h3>
+            <div id="liveData" class="data-display">No live data received yet...</div>
+        </div>
+
+        <!-- Event Log -->
+        <div class="section">
+            <h3>📝 Event Log</h3>
+            <div id="log" class="log">Test suite initialized...<br></div>
+        </div>
+    </div>
+
+    <script>
+        let connection = null;
+        let jwtToken = '';
+
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}<br>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function updateLiveData(data) {
+            const dataDiv = document.getElementById('liveData');
+            const timestamp = new Date().toLocaleTimeString();
+            dataDiv.innerHTML = `[${timestamp}] ${JSON.stringify(data, null, 2)}`;
+        }
+
+        async function getToken() {
+            try {
+                log('Getting JWT token...');
+                const response = await fetch('/api/auth/manager/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        login: "1006",
+                        password: "ManagerPass1!",
+                        server: "86.104.251.165:443",
+                        managerId: "default_manager"
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    jwtToken = data.token;
+                    document.getElementById('tokenInput').value = jwtToken;
+                    document.getElementById('authStatus').textContent = 'Token received successfully';
+                    document.getElementById('authStatus').className = 'status success';
+                    log('JWT token received and set');
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                document.getElementById('authStatus').textContent = `Failed to get token: ${error.message}`;
+                document.getElementById('authStatus').className = 'status error';
+                log(`Failed to get token: ${error.message}`);
+            }
+        }
+
+        function setToken() {
+            jwtToken = document.getElementById('tokenInput').value.trim();
+            if (jwtToken) {
+                document.getElementById('authStatus').textContent = 'Token set manually';
+                document.getElementById('authStatus').className = 'status success';
+                log('JWT token set manually');
+            } else {
+                document.getElementById('authStatus').textContent = 'No token provided';
+                document.getElementById('authStatus').className = 'status error';
+                log('JWT token cleared');
+            }
+        }
+
+        async function testHealth() {
+            try {
+                log('Testing health endpoint...');
+                const response = await fetch('/api/health');
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Health check passed: ${data.status}`);
+                    addTestResult('Health Check', true, `Status: ${data.status}`);
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                log(`Health check failed: ${error.message}`);
+                addTestResult('Health Check', false, error.message);
+            }
+        }
+
+        async function testTickData() {
+            if (!jwtToken) {
+                alert('Please set JWT token first!');
+                return;
+            }
+
+            const symbol = document.getElementById('symbolSelect').value;
+            try {
+                log(`Testing tick data for ${symbol}...`);
+                const response = await fetch(`/api/marketdata/tick/${symbol}`, {
+                    headers: {
+                        'Authorization': `Bearer ${jwtToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Tick data received for ${symbol}: ${JSON.stringify(data)}`);
+                    updateLiveData(data);
+                    addTestResult(`Tick Data - ${symbol}`, true, `Bid: ${data.bid}, Ask: ${data.ask}, Spread: ${data.spread}`);
+                } else {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+            } catch (error) {
+                log(`Tick data test failed for ${symbol}: ${error.message}`);
+                addTestResult(`Tick Data - ${symbol}`, false, error.message);
+            }
+        }
+
+        async function testAllSymbols() {
+            const symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'AUDUSD', 'USDCHF', 'USDCAD'];
+            log('Testing all symbols...');
+
+            for (const symbol of symbols) {
+                try {
+                    const response = await fetch(`/api/marketdata/tick/${symbol}`, {
+                        headers: {
+                            'Authorization': `Bearer ${jwtToken}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        addTestResult(`Tick Data - ${symbol}`, true, `Bid: ${data.bid}, Ask: ${data.ask}`);
+                    } else {
+                        const errorText = await response.text();
+                        addTestResult(`Tick Data - ${symbol}`, false, `HTTP ${response.status}: ${errorText}`);
+                    }
+                } catch (error) {
+                    addTestResult(`Tick Data - ${symbol}`, false, error.message);
+                }
+                await new Promise(resolve => setTimeout(resolve, 100)); // Small delay
+            }
+        }
+
+        function addTestResult(testName, passed, details) {
+            const resultsDiv = document.getElementById('apiResults');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${passed ? 'pass' : 'fail'}`;
+            resultDiv.innerHTML = `<strong>${testName}:</strong> ${passed ? 'PASS' : 'FAIL'} - ${details}`;
+            resultsDiv.appendChild(resultDiv);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        async function connectWebSocket() {
+            if (!jwtToken) {
+                alert('Please set JWT token first!');
+                return;
+            }
+
+            try {
+                log('Connecting to WebSocket...');
+                document.getElementById('wsStatus').textContent = 'Connecting...';
+                document.getElementById('wsStatus').className = 'status warning';
+                document.getElementById('connectBtn').disabled = true;
+
+                connection = new signalR.HubConnectionBuilder()
+                    .withUrl('/hubs/marketdata', {
+                        accessTokenFactory: () => jwtToken
+                    })
+                    .withAutomaticReconnect()
+                    .build();
+
+                // Set up event handlers
+                connection.on('Connected', (data) => {
+                    log(`WebSocket connected: ${JSON.stringify(data)}`);
+                    document.getElementById('wsStatus').textContent = 'Connected';
+                    document.getElementById('wsStatus').className = 'status success';
+                    document.getElementById('connectBtn').disabled = true;
+                    document.getElementById('disconnectBtn').disabled = false;
+                });
+
+                connection.on('Subscribed', (data) => {
+                    log(`Subscribed: ${JSON.stringify(data)}`);
+                });
+
+                connection.on('Unsubscribed', (data) => {
+                    log(`Unsubscribed: ${JSON.stringify(data)}`);
+                });
+
+                connection.on('TickData', (data) => {
+                    log(`TickData received: ${JSON.stringify(data)}`);
+                    updateLiveData(data);
+                });
+
+                connection.on('Error', (data) => {
+                    log(`WebSocket error: ${JSON.stringify(data)}`);
+                });
+
+                connection.onclose(() => {
+                    document.getElementById('wsStatus').textContent = 'Disconnected';
+                    document.getElementById('wsStatus').className = 'status error';
+                    document.getElementById('connectBtn').disabled = false;
+                    document.getElementById('disconnectBtn').disabled = true;
+                    log('WebSocket connection closed');
+                });
+
+                await connection.start();
+                log('WebSocket connection established successfully');
+
+            } catch (error) {
+                document.getElementById('wsStatus').textContent = 'Connection failed';
+                document.getElementById('wsStatus').className = 'status error';
+                document.getElementById('connectBtn').disabled = false;
+                log(`WebSocket connection failed: ${error.message}`);
+            }
+        }
+
+        async function disconnectWebSocket() {
+            if (connection) {
+                try {
+                    await connection.stop();
+                    connection = null;
+                } catch (error) {
+                    log(`Error disconnecting: ${error.message}`);
+                }
+            }
+        }
+
+        async function subscribeTicks() {
+            if (!connection) {
+                alert('Please connect WebSocket first!');
+                return;
+            }
+
+            const symbol = document.getElementById('wsSymbolInput').value.trim();
+            if (!symbol) {
+                alert('Please enter a symbol!');
+                return;
+            }
+
+            try {
+                await connection.invoke('SubscribeToTicks', symbol);
+                log(`Subscribed to ticks for ${symbol}`);
+            } catch (error) {
+                log(`Error subscribing to ticks: ${error.message}`);
+            }
+        }
+
+        async function unsubscribeTicks() {
+            if (!connection) {
+                alert('Please connect WebSocket first!');
+                return;
+            }
+
+            const symbol = document.getElementById('wsSymbolInput').value.trim();
+            if (!symbol) {
+                alert('Please enter a symbol!');
+                return;
+            }
+
+            try {
+                await connection.invoke('UnsubscribeFromTicks', symbol);
+                log(`Unsubscribed from ticks for ${symbol}`);
+            } catch (error) {
+                log(`Error unsubscribing from ticks: ${error.message}`);
+            }
+        }
+
+        async function testPing() {
+            if (!connection) {
+                alert('Please connect WebSocket first!');
+                return;
+            }
+
+            try {
+                await connection.invoke('Ping');
+                log('Ping sent');
+            } catch (error) {
+                log(`Error sending ping: ${error.message}`);
+            }
+        }
+
+        // Initialize
+        log('MT5Wrapper Complete Test Suite Loaded');
+        log('1. Click "Get Manager Token" to authenticate');
+        log('2. Test API endpoints with "Test Tick Data" or "Test All Symbols"');
+        log('3. Connect WebSocket and subscribe to live tick data');
+        log('4. Monitor live data updates in the Live Data section');
+    </script>
+</body>
+</html>

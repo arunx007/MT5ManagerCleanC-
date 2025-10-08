@@ -1,0 +1,61 @@
+* {
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #565656;
+  font-size: 12px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+div {
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  color: #565656;
+}
+
+a:link {
+  text-decoration: underline;
+  color: #42639C;
+}
+
+a:visited {
+  text-decoration: underline;
+  color: #42639C;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+td {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+p, span {
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #565656;
+}
+
+h1 {
+  font-family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #565656;
+}
+
+div.error {
+  width: 400px;
+  padding: 6px;
+  background-color: #FFEFEF;
+  border: 1px solid #95CCED;
+  margin: 4px 0;
+  text-align: left;
+
+}
